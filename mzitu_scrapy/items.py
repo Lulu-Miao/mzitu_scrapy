@@ -14,4 +14,3 @@ class MzituScrapyItem(scrapy.Item):
     name = scrapy.Field()
     image_urls = scrapy.Field()
     url = scrapy.Field()
-    pass

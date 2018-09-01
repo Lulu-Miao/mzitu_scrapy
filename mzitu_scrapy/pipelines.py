@@ -34,11 +34,6 @@ class MzituScrapyPipeline(ImagesPipeline):
         return filename
 
     def get_media_requests(self, item, info):
-        """
-        :param item: spider.py中返回的item
-        :param info:
-        :return:
-        """
         for img_url in item['image_urls']:
             referer = item['url']
             # print("pipelines.get_media_requests: yield Request" + referer)
@@ -50,7 +45,6 @@ class MzituScrapyPipeline(ImagesPipeline):
         image_paths = [x['path'] for ok, x in results if ok]
         if not image_paths:
             raise DropItem("Item contains no images")
-        # print("pipelines.item_completed: " + str(image_paths))
         return item
 
     # def process_item(self, item, spider):
